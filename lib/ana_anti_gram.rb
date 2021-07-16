@@ -26,6 +26,10 @@ class Gram
   end
 
   def antigram?()
-    return
+    if (@phrase1 - @phrase2) === @phrase1
+      return "These words have no letter matches and are antigrams."
+    else
+      return "Neither anagram or antigram. Please try again."
+    end
   end
 end
