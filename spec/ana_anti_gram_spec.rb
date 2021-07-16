@@ -56,4 +56,9 @@ describe('ana_anti_gram?') do
     expect(anagram4.check_vowels?).to(eq("Need to input actual words."))
     expect(anagram5.check_vowels?).to(eq("These words have no letter matches and are antigrams."))
   end
+
+  it("will check for same letters if it's neither an anagram or antigram") do
+    anagram1 = Gram.new("catt", "batty")
+    expect(anagram1.check_vowels?).to(eq(["a", "t", "t"]))
+  end
 end

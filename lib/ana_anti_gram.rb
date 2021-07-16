@@ -33,7 +33,7 @@ class Gram
     if (@phrase1 - @phrase2) === @phrase1
       return "These words have no letter matches and are antigrams."
     else
-      # WIP: Further exploration on matching letters when phrases aren't anagrams
+      
       return "Neither anagram or antigram. Please try again."
     end
   end
