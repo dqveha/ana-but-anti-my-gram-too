@@ -16,4 +16,10 @@ describe('ana_anti_gram?') do
     expect(anagram.phrase1).to(eq(["e","h","l","l","o"]))
     expect(anagram.phrase2).to(eq(["e","l","l","o"]))
   end
+
+  it("will check if phrase has vowels") do
+    anagram = Gram.new("HLL", "LL")
+
+    expect(anagram.check_vowels?).to(eq("Need to input actual words"))
+  end
 end
