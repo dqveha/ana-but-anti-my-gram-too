@@ -11,7 +11,7 @@ describe('ana_anti_gram?') do
   end
 
   it("will lowercase, remove non-word characters, split, and sort the phrases as an array") do
-    anagram = Gram.new("HEL'LO", "EL.LO")
+    anagram = Gram.new(" HEL'LO", "EL.LO ")
     anagram.split_sort_case_remove()
     expect(anagram.phrase1).to(eq(["e","h","l","l","o"]))
     expect(anagram.phrase2).to(eq(["e","l","l","o"]))
@@ -42,5 +42,18 @@ describe('ana_anti_gram?') do
     expect(anagram1.check_vowels?).to(eq("These words have no letter matches and are antigrams."))
     expect(anagram2.check_vowels?).to(eq("Neither anagram or antigram. Please try again."))
     expect(anagram3.check_vowels?).to(eq("Congratulations! You found an anagram!"))
+  end
+
+  it("will check for sentences if it's an anagram or antigram") do
+    anagram1 = Gram.new("The Morse Code", "Here come dots!")
+    anagram2 = Gram.new("This should fail! Right?", "YEAH, IT BETTER BECAUSE I'M TYPING A LOT OF STUFF IN THIS")
+    anagram3 = Gram.new("MGMT MSTRKFRT DWNTWN", "BAND NAMES WITHOUT VOWELS")
+    anagram4 = Gram.new("BAND NAMES WITHOUT VOWELS", "MGMT MSTRKFRT DWNTWN")
+    anagram5 = Gram.new("What is love?", "ux y z c z")
+    expect(anagram1.check_vowels?).to(eq("Congratulations! You found an anagram!"))
+    expect(anagram2.check_vowels?).to(eq("Neither anagram or antigram. Please try again."))
+    expect(anagram3.check_vowels?).to(eq("Need to input actual words."))
+    expect(anagram4.check_vowels?).to(eq("Need to input actual words."))
+    expect(anagram5.check_vowels?).to(eq("These words have no letter matches and are antigrams."))
   end
 end
