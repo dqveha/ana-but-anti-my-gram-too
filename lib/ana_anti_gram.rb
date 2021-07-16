@@ -33,8 +33,8 @@ class Gram
     if (@phrase1 - @phrase2) === @phrase1
       return "These words have no letter matches and are antigrams."
     else
-      
-      return "Neither anagram or antigram. Please try again."
+      matching_letters = (@phrase1 & @phrase2).flat_map { |a| [a]*[@phrase1.count(a), @phrase2.count(a)].min}
+      return "Neither anagram or antigram. However, these phrases have #{matching_letters.length} letters in common: #{matching_letters}."
     end
   end
 end
