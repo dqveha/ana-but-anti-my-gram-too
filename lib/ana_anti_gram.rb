@@ -7,7 +7,8 @@ class Gram
   end
 
   def split_and_sort
-    return
+    @phrase1 = @phrase1.split("").sort!()
+    @phrase2 = @phrase2.split("").sort!()
   end
 
   def ana_anti_gram?()
