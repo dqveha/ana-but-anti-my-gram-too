@@ -21,9 +21,9 @@ describe('ana_anti_gram?') do
     anagram1 = Gram.new("HLL", "LL")
     anagram2 = Gram.new("HELLO", "ELLOH")
     anagram3 = Gram.new("HELLO", "LLH")
-    expect(anagram1.check_vowels?).to(eq("Need to input actual words"))
-    expect(anagram2.check_vowels?).to(eq(true))
-    expect(anagram3.check_vowels?).to(eq("Need to input actual words"))
+    expect(anagram1.check_vowels?).to(eq("Need to input actual words."))
+    expect(anagram2.check_vowels?).to(eq("Congratulations! You found an anagram!"))
+    expect(anagram3.check_vowels?).to(eq("Need to input actual words."))
   end
 
   it("will check if phrase have any matching letters; if not then it will say they are antigrams") do
@@ -33,5 +33,14 @@ describe('ana_anti_gram?') do
     anagram2.split_sort_case()
     expect(anagram1.antigram?).to(eq("These words have no letter matches and are antigrams."))
     expect(anagram2.antigram?).to(eq("Neither anagram or antigram. Please try again."))
+  end
+
+  it("will check if it's an anagram or antigram within check_vowels? method") do
+    anagram1 = Gram.new("HI", "BYE")
+    anagram2 = Gram.new("HE", "BYE")
+    anagram3 = Gram.new("HELLO", "ELLOH")
+    expect(anagram1.check_vowels?).to(eq("These words have no letter matches and are antigrams."))
+    expect(anagram2.check_vowels?).to(eq("Neither anagram or antigram. Please try again."))
+    expect(anagram3.check_vowels?).to(eq("Congratulations! You found an anagram!"))
   end
 end

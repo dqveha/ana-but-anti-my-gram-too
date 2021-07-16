@@ -19,9 +19,13 @@ class Gram
   def check_vowels?()
     if (@phrase1 =~ /[aeiou]/i) && (@phrase2 =~ /[aeiou]/i)
       split_sort_case()
-      anagram?()
+        if anagram?() === true
+            return "Congratulations! You found an anagram!"
+        else
+            antigram?()
+        end
     else
-      return "Need to input actual words"
+      return "Need to input actual words."
     end
   end
 
