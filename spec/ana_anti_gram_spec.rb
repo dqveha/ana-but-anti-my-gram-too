@@ -21,9 +21,9 @@ describe('ana_anti_gram?') do
     anagram1 = Gram.new("HLL", "LL")
     anagram2 = Gram.new("HELLO", "ELLOH")
     anagram3 = Gram.new("HELLO", "LLH")
-    expect(anagram1.check_vowels?).to(eq("Need to input actual words."))
+    expect(anagram1.check_vowels?).to(eq("Need to input actual words in both phrases."))
     expect(anagram2.check_vowels?).to(eq("Congratulations! You found an anagram!"))
-    expect(anagram3.check_vowels?).to(eq("Need to input actual words."))
+    expect(anagram3.check_vowels?).to(eq("Need to input actual words in both phrases."))
   end
 
   it("will check if phrase have any matching letters; if not then it will say they are antigrams") do
@@ -52,8 +52,8 @@ describe('ana_anti_gram?') do
     anagram5 = Gram.new("What is love?", "ux y z c z")
     expect(anagram1.check_vowels?).to(eq("Congratulations! You found an anagram!"))
     expect(anagram2.check_vowels?).to(eq('Neither anagram or antigram. However, these phrases have 16 letter(s) in common: ["a", "f", "g", "h", "h", "i", "i", "i", "l", "o", "r", "s", "s", "t", "t", "u"].'))
-    expect(anagram3.check_vowels?).to(eq("Need to input actual words."))
-    expect(anagram4.check_vowels?).to(eq("Need to input actual words."))
+    expect(anagram3.check_vowels?).to(eq("Need to input actual words in both phrases."))
+    expect(anagram4.check_vowels?).to(eq("Need to input actual words in both phrases."))
     expect(anagram5.check_vowels?).to(eq("These words have no letter matches and are antigrams."))
   end
 

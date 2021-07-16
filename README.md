@@ -4,6 +4,8 @@
 
 #### By Dave Lindqvist
 
+---
+
 ## Description
 
 This is the seventh independent project (Ruby, Week 1) assigned by Epicodus to assess my proficiency with Ruby as well as completing specs. The purpose of this project was to create an algorithm that evaluates if two words/phrases are anagrams or antigrams with each other. Per Oxford Languages, an anagram is "a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman." Antigrams, in this case, are considered to be words that do not have the same letters with each other such as "hi" and "bye".

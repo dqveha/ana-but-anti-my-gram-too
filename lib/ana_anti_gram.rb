@@ -24,7 +24,7 @@ class Gram
             antigram?()
         end
     else
-      return "Need to input actual words."
+      return "Need to input actual words in both phrases."
     end
   end
 
