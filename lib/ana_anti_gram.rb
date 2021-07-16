@@ -17,6 +17,11 @@ class Gram
   end
 
   def check_vowels?()
-    
+    if (@phrase1 =~ /[aeiou]/i) && (@phrase2 =~ /[aeiou]/i)
+      split_sort_case()
+      ana_anti_gram?()
+    else
+      return "Need to input actual words"
+    end
   end
 end
