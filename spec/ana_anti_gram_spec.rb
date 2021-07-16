@@ -10,9 +10,9 @@ describe('ana_anti_gram?') do
     expect(anagram2.anagram?).to(eq(false))
   end
 
-  it("will lowercase, split, and sort the phrases as an array") do
-    anagram = Gram.new("HELLO", "ELLO")
-    anagram.split_sort_case()
+  it("will lowercase, remove non-word characters, split, and sort the phrases as an array") do
+    anagram = Gram.new("HEL'LO", "EL.LO")
+    anagram.split_sort_case_remove()
     expect(anagram.phrase1).to(eq(["e","h","l","l","o"]))
     expect(anagram.phrase2).to(eq(["e","l","l","o"]))
   end
@@ -29,8 +29,8 @@ describe('ana_anti_gram?') do
   it("will check if phrase have any matching letters; if not then it will say they are antigrams") do
     anagram1 = Gram.new("HI", "BYE")
     anagram2 = Gram.new("HE", "BYE")
-    anagram1.split_sort_case()
-    anagram2.split_sort_case()
+    anagram1.split_sort_case_remove()
+    anagram2.split_sort_case_remove()
     expect(anagram1.antigram?).to(eq("These words have no letter matches and are antigrams."))
     expect(anagram2.antigram?).to(eq("Neither anagram or antigram. Please try again."))
   end

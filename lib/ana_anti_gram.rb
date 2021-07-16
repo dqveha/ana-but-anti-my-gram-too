@@ -11,14 +11,14 @@ class Gram
     @phrase1 === @phrase2
   end
 
-  def split_sort_case()
-    @phrase1 = @phrase1.downcase().split("").sort!()
-    @phrase2 = @phrase2.downcase().split("").sort!()
+  def split_sort_case_remove()
+    @phrase1 = @phrase1.downcase().gsub(/\W/, "").split("").sort!()
+    @phrase2 = @phrase2.downcase().gsub(/\W/, "").split("").sort!()
   end
 
   def check_vowels?()
     if (@phrase1 =~ /[aeiou]/i) && (@phrase2 =~ /[aeiou]/i)
-      split_sort_case()
+      split_sort_case_remove()
         if anagram?() === true
             return "Congratulations! You found an anagram!"
         else
