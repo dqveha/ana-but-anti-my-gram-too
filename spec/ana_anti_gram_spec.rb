@@ -10,9 +10,9 @@ describe('ana_anti_gram?') do
     expect(anagram2.ana_anti_gram?).to(eq(false))
   end
 
-  it("will split and sort the phrases as an array") do
-    anagram = Gram.new("hello", "ello")
-    anagram.split_and_sort()
+  it("will lowercase, split, and sort the phrases as an array") do
+    anagram = Gram.new("HELLO", "ELLO")
+    anagram.split_sort_case()
     expect(anagram.phrase1).to(eq(["e","h","l","l","o"]))
     expect(anagram.phrase2).to(eq(["e","l","l","o"]))
   end

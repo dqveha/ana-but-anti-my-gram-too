@@ -6,9 +6,9 @@ class Gram
     @phrase2 = phrase2
   end
 
-  def split_and_sort
-    @phrase1 = @phrase1.split("").sort!()
-    @phrase2 = @phrase2.split("").sort!()
+  def split_sort_case
+    @phrase1 = @phrase1.downcase().split("").sort!()
+    @phrase2 = @phrase2.downcase().split("").sort!()
   end
 
   def ana_anti_gram?()
