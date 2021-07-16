@@ -5,7 +5,6 @@ class Gram
     @phrase1 = phrase1
     @phrase2 = phrase2
   end
-
   
   def anagram?()
     @phrase1 === @phrase2
@@ -17,7 +16,7 @@ class Gram
   end
 
   def check_vowels?()
-    if (@phrase1 =~ /[aeiou]/i) && (@phrase2 =~ /[aeiou]/i)
+    if (@phrase1 =~ /[aeiouy]/i) && (@phrase2 =~ /[aeiouy]/i)
       split_sort_case_remove()
         if anagram?() === true
             return "Congratulations! You found an anagram!"
