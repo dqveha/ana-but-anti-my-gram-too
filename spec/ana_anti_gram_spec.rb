@@ -32,7 +32,7 @@ describe('ana_anti_gram?') do
     anagram1.split_sort_case_remove()
     anagram2.split_sort_case_remove()
     expect(anagram1.antigram?).to(eq("These words have no letter matches and are antigrams."))
-    expect(anagram2.antigram?).to(eq('Neither anagram or antigram. However, these phrases have 1 letters in common: ["e"].'))
+    expect(anagram2.antigram?).to(eq('Neither anagram or antigram. However, these phrases have 1 letter(s) in common: ["e"].'))
   end
 
   it("will check if it's an anagram or antigram within check_vowels? method") do
@@ -40,7 +40,7 @@ describe('ana_anti_gram?') do
     anagram2 = Gram.new("HE", "BYE")
     anagram3 = Gram.new("HELLO", "ELLOH")
     expect(anagram1.check_vowels?).to(eq("These words have no letter matches and are antigrams."))
-    expect(anagram2.check_vowels?).to(eq('Neither anagram or antigram. However, these phrases have 1 letters in common: ["e"].'))
+    expect(anagram2.check_vowels?).to(eq('Neither anagram or antigram. However, these phrases have 1 letter(s) in common: ["e"].'))
     expect(anagram3.check_vowels?).to(eq("Congratulations! You found an anagram!"))
   end
 
@@ -51,7 +51,7 @@ describe('ana_anti_gram?') do
     anagram4 = Gram.new("BAND NAMES WITHOUT VOWELS", "MGMT MSTRKFRT DWNTWN")
     anagram5 = Gram.new("What is love?", "ux y z c z")
     expect(anagram1.check_vowels?).to(eq("Congratulations! You found an anagram!"))
-    expect(anagram2.check_vowels?).to(eq('Neither anagram or antigram. However, these phrases have 16 letters in common: ["a", "f", "g", "h", "h", "i", "i", "i", "l", "o", "r", "s", "s", "t", "t", "u"].'))
+    expect(anagram2.check_vowels?).to(eq('Neither anagram or antigram. However, these phrases have 16 letter(s) in common: ["a", "f", "g", "h", "h", "i", "i", "i", "l", "o", "r", "s", "s", "t", "t", "u"].'))
     expect(anagram3.check_vowels?).to(eq("Need to input actual words."))
     expect(anagram4.check_vowels?).to(eq("Need to input actual words."))
     expect(anagram5.check_vowels?).to(eq("These words have no letter matches and are antigrams."))
@@ -59,6 +59,6 @@ describe('ana_anti_gram?') do
 
   it("will check for same letters if it's neither an anagram or antigram") do
     anagram1 = Gram.new("catt", "batty")
-    expect(anagram1.check_vowels?).to(eq('Neither anagram or antigram. However, these phrases have 3 letters in common: ["a", "t", "t"].'))
+    expect(anagram1.check_vowels?).to(eq('Neither anagram or antigram. However, these phrases have 3 letter(s) in common: ["a", "t", "t"].'))
   end
 end
